@@ -115,7 +115,7 @@
 <table bordercolordark="white" bordercolorlight="white" bgcolor="white" border="1" bordercolor="white" width="100%">
     <tbody>
         <tr><td><font size="4" color="blue"><b>团队学生</b></font></td></tr>
-        <tr>
+        <!-- <tr>
             <td width="400">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="black" size="3"><b>移动边缘计算、博弈论方向</b></font>
             </td>
@@ -153,7 +153,7 @@
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" style="color:black">刘延亮</a>（本科生）</p>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" style="color:black">王 博</a>（本科生）</p>
             </td>
-            <!-- 控制图片并排显示 -->
+            //控制图片并排显示 
             <td style="width: 70%;display:float;">
                 <table style="display:inline" class="table-bordered" id="ESCompare" >        
                     <tbody>
@@ -203,8 +203,176 @@
                 </table> 
             </td>
         </tr>
-</tbody></table>
-
+</tbody></table> -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研究团队展示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            margin: 0;
+            color: #333;
+        }
+        .team-section {
+            display: flex;
+            margin-bottom: 30px;
+        }
+        .team-members {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .team-members h3 {
+            color: #000;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .team-members p {
+            margin: 5px 0;
+        }
+        .team-members a {
+            color: #000;
+            text-decoration: none;
+        }
+        .team-members a:hover {
+            text-decoration: underline;
+        }
+        .team-honors {
+            flex: 2;
+        }
+        .honor-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .honor-item {
+            text-align: center;
+        }
+        .honor-item img {
+            width: 100%;
+            max-width: 300px;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .honor-item p {
+            margin-top: 8px;
+            font-weight: bold;
+        }
+        .section-title {
+            color: purple;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .research-area {
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>移动边缘计算、博弈论方向</h2>
+            <h2 class="section-title">荣誉※风采</h2>
+        </div>
+        
+        <div class="team-section">
+            <div class="team-members">
+                <div class="research-area">移动边缘计算、博弈论方向</div>
+                <p><a href="javascript:void(0)">江翠丽</a> (2018.9-2021.6) &nbsp;&nbsp;入职新华三公司</p>
+                <p><a href="javascript:void(0)">易杰</a>（2021.9-）</p>
+                <p><a href="javascript:void(0)">汪健</a>（2021.9-）</p>
+                <p><a href="javascript:void(0)">方彦博</a>（2022.9-）</p>
+                <p><a href="javascript:void(0)">张念庆</a> (2023.9-)</p>
+                <p><a href="javascript:void(0)">孙天乐</a> (2023.9-)</p>
+                
+                <div class="research-area">机器学习、联邦学习、隐私保护方向</div>
+                <p><a href="javascript:void(0)">张子震</a> (2020.9-2023.6)</p>
+                <p><a href="javascript:void(0)">张一鸣</a> (2022.9-)</p>
+                <p><a href="javascript:void(0)">尹润天</a> (2022.9-)</p>
+                <p><a href="javascript:void(0)">师重阳</a> (2023.9-)</p>
+                <p><a href="javascript:void(0)">胡德洋</a> (2024.9-)</p>
+                <p><a href="javascript:void(0)">毛浩宇</a> (2024.9-)</p>
+                
+                <div class="research-area">机器学习、联邦学习、隐私保护方向</div>
+                <p><a href="javascript:void(0)">王世颍</a> (2022.9-2025.6)</p>
+                <p><a href="javascript:void(0)">刘薇</a> (2023.9-)</p>
+                <p><a href="javascript:void(0)">王艳雨</a> (2024.9-)</p>
+                <p><a href="javascript:void(0)">刘瑶</a> (2024.9-)</p>
+                
+                <div class="research-area">ctf、网络攻防方向</div>
+                <p><a href="javascript:void(0)">张洪润</a> (2022.9-)</p>
+                <p><a href="javascript:void(0)">刘延亮</a>（本科生）</p>
+                <p><a href="javascript:void(0)">王 博</a>（本科生）</p>
+            </div>
+            
+            <div class="team-honors">
+                <div class="honor-gallery">
+                    <div class="honor-item">
+                        <a href="javascript:void(0)">
+                            <img src="pic/prize/1.jpg" alt="团队江翠丽同学荣誉" title="团队江翠丽同学荣誉">
+                            <p>团队江翠丽同学荣誉</p>
+                        </a>
+                    </div>
+                    <div class="honor-item">
+                        <a href="javascript:void(0)">
+                            <img src="pic/prize/2.jpg" alt="团队江翠丽同学荣誉" title="团队江翠丽同学荣誉">
+                            <p>团队江翠丽同学荣誉</p>
+                        </a>
+                    </div>
+                    <div class="honor-item">
+                        <a href="javascript:void(0)">
+                            <img src="pic/prize/5.jpg" alt="团队学生参加学术交流" title="团队学生参加学术交流">
+                            <p>团队学生参加学术交流</p>
+                        </a>
+                    </div>
+                    <div class="honor-item">
+                        <a href="javascript:void(0)">
+                            <img src="pic/prize/3.jpg" alt="团队易杰同学获奖" title="团队易杰同学获奖">
+                            <p>团队易杰同学获奖</p>
+                        </a>
+                    </div>
+                    <div class="honor-item">
+                        <a href="javascript:void(0)">
+                            <img src="pic/prize/4.jpg" alt="团队江翠丽同学论文获奖" title="团队江翠丽同学论文获奖">
+                            <p>团队江翠丽同学论文获奖</p>
+                        </a>
+                    </div>
+                    <div class="honor-item">
+                        <a href="javascript:void(0)">
+                            <img src="pic/prize/6.jpg" alt="团队同学获奖" title="团队同学获奖">
+                            <p>团队同学获奖</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    
 <hr>
 
 <table bordercolordark="white" bordercolorlight="white" bgcolor="white" border="1" bordercolor="white" width="100%">
