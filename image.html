@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>相册</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+			}
+			.image-container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 20px;
+				padding: 20px;
+			}
+			.album-item {
+				width: 300px;
+				box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+				transition: transform 0.3s;
+				border-radius: 8px;
+				overflow: hidden;
+			}
+			.album-item:hover {
+				transform: scale(1.03);
+			}
+			.album-item img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
+			}
+			.album-item .description {
+				padding: 15px;
+				text-align: center;
+			}
+			.album-item h3 {
+				margin-top: 0;
+				color: #333;
+			}
+			.album-item p {
+				color: #666;
+				font-size: 14px;
+			}
+			.album-link {
+				text-decoration: none;
+				color: inherit;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="image-container">
+			<a href="image1.html" class="album-link">
+				<div class="album-item">
+					<img src="pic/ry.jpg" alt="封面1">
+					<div class="description">
+						<h3>荣誉风采</h3>
+						<p>学生荣誉</p>
+					</div>
+				</div>
+			</a>
+			<a href="image2.html" class="album-link">
+				<div class="album-item">
+					<img src="pic/by.jpg" alt="封面2">
+					<div class="description">
+						<h3>毕业留念</h3>
+						<p>毕业留影</p>
+					</div>
+				</div>
+			</a>
+			
+		</div>
+	</body>
+</html>

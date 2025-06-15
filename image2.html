@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>毕业留影- 详情</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 20px;
+				background-color: #f5f5f5;
+			}
+			.page-title {
+				text-align: center;
+				color: #333;
+			}
+			.image-container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: flex-start; /* 左对齐 */
+				gap: 15px;
+			}
+			.image-item {
+				width: calc(25% - 11.25px); /* 四张图片占一行，减去间隙 */
+				border-radius: 8px;
+				box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+				overflow: hidden;
+				cursor: pointer;
+			}
+			.image-item img {
+				width: 100%;
+				height: 280px;
+				object-fit: cover;
+				display: block;
+			}
+			.caption {
+				text-align: center;
+				margin-top: 8px;
+				font-size: 14px;
+				color: #666;
+				padding: 0 10px;
+			}
+
+			/* 详情页样式 */
+			.detail-page {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.9);
+				z-index: 1000;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.detail-img {
+				max-width: 80%;
+				max-height: 70vh;
+				object-fit: contain;
+			}
+
+			.close-btn {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				color: white;
+				font-size: 30px;
+				cursor: pointer;
+			}
+
+			.detail-caption {
+				color: white;
+				font-size: 16px;
+				text-align: center;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="page-title">毕业留影</h1>
+		<div class="image-container">
+			<div class="image-item" onclick="showDetail('pic/photo/2025_1.jpg', '留影于2025年6月&nbsp;&nbsp;地点：操场')">
+				<img src="pic/photo/2025_1.jpg" alt="留影1">
+				<p class="caption">留影于2025年6月&nbsp;&nbsp;地点：操场</p>
+			</div>
+			<div class="image-item" onclick="showDetail('pic/photo/2025_2.jpg', '留影于2025年6月&nbsp;&nbsp;地点：观众席')">
+				<img src="pic/photo/2025_2.jpg" alt="留影2">
+				<p class="caption">留影于2025年6月&nbsp;&nbsp;地点：观众席</p>
+			</div>
+			<div class="image-item" onclick="showDetail('pic/photo/2025_3.jpg', '留影于2025年6月&nbsp;&nbsp;地点：操场')">
+				<img src="pic/photo/2025_3.jpg" alt="留影3">
+				<p class="caption">留影于2025年6月&nbsp;&nbsp;地点：操场</p>
+			</div>
+			<div class="image-item" onclick="showDetail('pic/photo/2025_4.jpg', '留影于2025年6月&nbsp;&nbsp;地点：观众席')">
+				<img src="pic/photo/2025_4.jpg" alt="留影4">
+				<p class="caption">留影于2025年6月&nbsp;&nbsp;地点：观众席</p>
+			</div>
+			<div class="image-item" onclick="showDetail('pic/ky.jpg', '尽情期待')">
+				<img src="pic/ky.jpg" alt="期待">
+				<p class="caption">尽情期待</p>
+			</div>
+		</div>
+
+		<div class="detail-page" id="detailPage">
+			<span class="close-btn" onclick="closeDetail()">&times;</span>
+			<img class="detail-img" id="detailImg" src="" alt="详情图">
+			<p class="detail-caption" id="detailCaption"></p>
+		</div>
+
+		<script>
+			function showDetail(imgSrc, captionText) {
+				console.log("显示详情", imgSrc, captionText);
+				document.getElementById('detailImg').src = imgSrc;
+				document.getElementById('detailCaption').textContent = captionText;
+				document.getElementById('detailPage').style.display = 'flex';
+			}
+
+			function closeDetail() {
+				console.log("关闭详情");
+				document.getElementById('detailPage').style.display = 'none';
+			}
+		</script>
+	</body>
+</html>
