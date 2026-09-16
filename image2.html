@@ -1,186 +1,149 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>毕业留影- 详情</title>
-		<style>
-			body {
-				font-family: Arial, sans-serif;
-				margin: 0;
-				padding: 20px;
-				background-color: #f5f5f5;
-			}
-			.page-title {
-				text-align: center;
-				color: #333;
-			}
-			.image-container {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: flex-start; /* 左对齐 */
-				gap: 15px;
-			}
-			.image-item {
-				width: calc(25% - 11.25px); /* 四张图片占一行，减去间隙 */
-				border-radius: 8px;
-				box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-				overflow: hidden;
-				cursor: pointer;
-			}
-			.image-item img {
-				width: 100%;
-				height: 280px;
-				object-fit: cover;
-				display: block;
-			}
-			.caption {
-				text-align: center;
-				margin-top: 8px;
-				font-size: 14px;
-				color: #666;
-				padding: 0 10px;
-			}
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>毕业留影 - 曹腾飞教授个人主页</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-			/* 详情页样式 */
-			.detail-page {
-				display: none;
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: rgba(0, 0, 0, 0.9);
-				z-index: 1000;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-			}
+<nav class="nav">
+	<div class="wrap">
+		<a class="nav-home" href="index.html">曹腾飞</a>
+		<div class="nav-links">
+			<a href="index.html">返回主页</a>
+			<a href="image.html">返回相册</a>
+		</div>
+	</div>
+</nav>
 
-			.detail-img {
-				max-width: 80%;
-				max-height: 70vh;
-				object-fit: contain;
-			}
+<div class="wrap">
 
-			.close-btn {
-				position: absolute;
-				top: 20px;
-				right: 20px;
-				color: white;
-				font-size: 30px;
-				cursor: pointer;
-			}
-
-			.detail-caption {
-				color: white;
-				font-size: 16px;
-				text-align: center;
-				margin-top: 20px;
-			}
-		</style>
-	</head>
-	<body>
+	<div class="page-head">
+		<div class="back-bar">
+			<a href="index.html">← 返回主页</a>
+			<a href="image.html">← 返回相册</a>
+		</div>
 		<h1 class="page-title">毕业留影</h1>
-		<div class="image-container">
-			<div class="image-item" onclick="showDetail('pic/photo/2026_1.jpg', '留影于2026年6月  地点：南门侧道')">
-				<img src="pic/photo/2026_1.jpg" alt="2026毕业留影1">
-				<p class="caption">留影于2026年6月&nbsp;&nbsp;地点：南门侧道</p>
-			</div>
-			
-			<div class="image-item" onclick="showDetail('pic/photo/2026_2.jpg', '留影于2026年6月  地点：学院楼前')">
-				<img src="pic/photo/2026_2.jpg" alt="2026毕业留影2">
-				<p class="caption">留影于2026年6月&nbsp;&nbsp;地点：学院楼前</p>
-			</div>
-			
-			<div class="image-item" onclick="showDetail('pic/photo/2026_3.jpg', '留影于2026年6月  地点：学院楼前')">
-				<img src="pic/photo/2026_3.jpg" alt="2026毕业留影3">
-				<p class="caption">留影于2026年6月&nbsp;&nbsp;地点：学院楼前</p>
-			</div>
-			
-			<div class="image-item" onclick="showDetail('pic/photo/2026_4.jpg', '留影于2026年6月  地点：学院楼前')">
-				<img src="pic/photo/2026_4.jpg" alt="2026毕业留影4">
-				<p class="caption">留影于2026年6月&nbsp;&nbsp;地点：学院楼前</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2025_1.jpg', '留影于2025年6月&nbsp;&nbsp;地点：操场')">
-				<img src="pic/photo/2025_1.jpg" alt="留影1">
-				<p class="caption">留影于2025年6月&nbsp;&nbsp;地点：操场</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2025_2.jpg', '留影于2025年6月&nbsp;&nbsp;地点：观众席')">
-				<img src="pic/photo/2025_2.jpg" alt="留影2">
-				<p class="caption">留影于2025年6月&nbsp;&nbsp;地点：观众席</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2025_3.jpg', '留影于2025年6月&nbsp;&nbsp;地点：观众席')">
-				<img src="pic/photo/2025_3.jpg" alt="留影3">
-				<p class="caption">留影于2025年6月&nbsp;&nbsp;地点：观众席</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2025_4.jpg', '留影于2025年6月&nbsp;&nbsp;地点：操场')">
-				<img src="pic/photo/2025_4.jpg" alt="留影4">
-				<p class="caption">留影于2025年6月&nbsp;&nbsp;地点：操场</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2024_1.jpg', '留影于2024年6月&nbsp;&nbsp;地点：系楼大厅')">
-				<img src="pic/photo/2024_1.jpg" alt="留影4">
-				<p class="caption">留影于2024年6月&nbsp;&nbsp;地点：系楼大厅</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2024_2.jpg', '留影于2024年6月&nbsp;&nbsp;地点：系楼大厅')">
-				<img src="pic/photo/2024_2.jpg" alt="留影4">
-				<p class="caption">留影于2024年6月&nbsp;&nbsp;地点：系楼大厅</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2024_3.jpg', '留影于2024年6月&nbsp;&nbsp;地点：农牧楼前')">
-				<img src="pic/photo/2024_3.jpg" alt="留影4">
-				<p class="caption">留影于2024年6月&nbsp;&nbsp;地点：农牧楼前</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2024_4.jpg', '留影于2024年6月&nbsp;&nbsp;地点：实验室')">
-				<img src="pic/photo/2024_4.jpg" alt="留影4">
-				<p class="caption">留影于2024年6月&nbsp;&nbsp;地点：实验室</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2024_5.jpg', '留影于2024年6月&nbsp;&nbsp;地点：农牧楼前')">
-				<img src="pic/photo/2024_5.jpg" alt="留影4">
-				<p class="caption">留影于2024年6月&nbsp;&nbsp;地点：农牧楼前</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2024_6.jpg', '留影于2024年6月&nbsp;&nbsp;地点：农牧楼前')">
-				<img src="pic/photo/2024_6.jpg" alt="留影4">
-				<p class="caption">留影于2024年6月&nbsp;&nbsp;地点：农牧楼前</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2024_7.jpg', '留影于2024年6月&nbsp;&nbsp;地点：农牧楼前')">
-				<img src="pic/photo/2024_7.jpg" alt="留影4">
-				<p class="caption">留影于2024年6月&nbsp;&nbsp;地点：农牧楼前</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2024_8.jpg', '留影于2024年6月&nbsp;&nbsp;地点：农牧楼前')">
-				<img src="pic/photo/2024_8.jpg" alt="留影4">
-				<p class="caption">留影于2024年6月&nbsp;&nbsp;地点：农牧楼前</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2023_1.jpg', '留影于2023年6月&nbsp;&nbsp;地点：系楼正门')">
-				<img src="pic/photo/2023_1.jpg" alt="留影4">
-				<p class="caption">留影于2023年6月&nbsp;&nbsp;地点：系楼正门</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/photo/2023_2.jpg', '留影于2023年6月&nbsp;&nbsp;地点：系楼门前')">
-				<img src="pic/photo/2023_2.jpg" alt="留影4">
-				<p class="caption">留影于2023年6月&nbsp;&nbsp;地点：系楼门前</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/ky.jpg', '敬请期待')">
-				<img src="pic/ky.jpg" alt="期待">
-				<p class="caption">敬请期待</p>
-			</div>
+		<p class="page-sub">点击图片查看大图</p>
+	</div>
+
+	<div class="gallery">
+		<div class="g-item" onclick="showDetail('pic/photo/2026_1.jpg', '留影于2026年6月  地点：南门侧道')">
+			<img src="pic/photo/2026_1.jpg" alt="2026毕业留影1">
+			<p class="g-cap">留影于2026年6月&nbsp;&nbsp;地点：南门侧道</p>
 		</div>
-
-		<div class="detail-page" id="detailPage">
-			<span class="close-btn" onclick="closeDetail()">&times;</span>
-			<img class="detail-img" id="detailImg" src="" alt="详情图">
-			<p class="detail-caption" id="detailCaption"></p>
+		<div class="g-item" onclick="showDetail('pic/photo/2026_2.jpg', '留影于2026年6月  地点：学院楼前')">
+			<img src="pic/photo/2026_2.jpg" alt="2026毕业留影2">
+			<p class="g-cap">留影于2026年6月&nbsp;&nbsp;地点：学院楼前</p>
 		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2026_3.jpg', '留影于2026年6月  地点：学院楼前')">
+			<img src="pic/photo/2026_3.jpg" alt="2026毕业留影3">
+			<p class="g-cap">留影于2026年6月&nbsp;&nbsp;地点：学院楼前</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2026_4.jpg', '留影于2026年6月  地点：学院楼前')">
+			<img src="pic/photo/2026_4.jpg" alt="2026毕业留影4">
+			<p class="g-cap">留影于2026年6月&nbsp;&nbsp;地点：学院楼前</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2025_1.jpg', '留影于2025年6月  地点：操场')">
+			<img src="pic/photo/2025_1.jpg" alt="2025留影1">
+			<p class="g-cap">留影于2025年6月&nbsp;&nbsp;地点：操场</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2025_2.jpg', '留影于2025年6月  地点：观众席')">
+			<img src="pic/photo/2025_2.jpg" alt="2025留影2">
+			<p class="g-cap">留影于2025年6月&nbsp;&nbsp;地点：观众席</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2025_3.jpg', '留影于2025年6月  地点：观众席')">
+			<img src="pic/photo/2025_3.jpg" alt="2025留影3">
+			<p class="g-cap">留影于2025年6月&nbsp;&nbsp;地点：观众席</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2025_4.jpg', '留影于2025年6月  地点：操场')">
+			<img src="pic/photo/2025_4.jpg" alt="2025留影4">
+			<p class="g-cap">留影于2025年6月&nbsp;&nbsp;地点：操场</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2024_1.jpg', '留影于2024年6月  地点：系楼大厅')">
+			<img src="pic/photo/2024_1.jpg" alt="2024留影1">
+			<p class="g-cap">留影于2024年6月&nbsp;&nbsp;地点：系楼大厅</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2024_2.jpg', '留影于2024年6月  地点：系楼大厅')">
+			<img src="pic/photo/2024_2.jpg" alt="2024留影2">
+			<p class="g-cap">留影于2024年6月&nbsp;&nbsp;地点：系楼大厅</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2024_3.jpg', '留影于2024年6月  地点：农牧楼前')">
+			<img src="pic/photo/2024_3.jpg" alt="2024留影3">
+			<p class="g-cap">留影于2024年6月&nbsp;&nbsp;地点：农牧楼前</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2024_4.jpg', '留影于2024年6月  地点：实验室')">
+			<img src="pic/photo/2024_4.jpg" alt="2024留影4">
+			<p class="g-cap">留影于2024年6月&nbsp;&nbsp;地点：实验室</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2024_5.jpg', '留影于2024年6月  地点：农牧楼前')">
+			<img src="pic/photo/2024_5.jpg" alt="2024留影5">
+			<p class="g-cap">留影于2024年6月&nbsp;&nbsp;地点：农牧楼前</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2024_6.jpg', '留影于2024年6月  地点：农牧楼前')">
+			<img src="pic/photo/2024_6.jpg" alt="2024留影6">
+			<p class="g-cap">留影于2024年6月&nbsp;&nbsp;地点：农牧楼前</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2024_7.jpg', '留影于2024年6月  地点：农牧楼前')">
+			<img src="pic/photo/2024_7.jpg" alt="2024留影7">
+			<p class="g-cap">留影于2024年6月&nbsp;&nbsp;地点：农牧楼前</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2024_8.jpg', '留影于2024年6月  地点：农牧楼前')">
+			<img src="pic/photo/2024_8.jpg" alt="2024留影8">
+			<p class="g-cap">留影于2024年6月&nbsp;&nbsp;地点：农牧楼前</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2023_1.jpg', '留影于2023年6月  地点：系楼正门')">
+			<img src="pic/photo/2023_1.jpg" alt="2023留影1">
+			<p class="g-cap">留影于2023年6月&nbsp;&nbsp;地点：系楼正门</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/photo/2023_2.jpg', '留影于2023年6月  地点：系楼门前')">
+			<img src="pic/photo/2023_2.jpg" alt="2023留影2">
+			<p class="g-cap">留影于2023年6月&nbsp;&nbsp;地点：系楼门前</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/ky.jpg', '敬请期待')">
+			<img src="pic/ky.jpg" alt="敬请期待">
+			<p class="g-cap">敬请期待</p>
+		</div>
+	</div>
 
-		<script>
-			function showDetail(imgSrc, captionText) {
-				console.log("显示详情", imgSrc, captionText);
-				document.getElementById('detailImg').src = imgSrc;
-				document.getElementById('detailCaption').textContent = captionText;
-				document.getElementById('detailPage').style.display = 'flex';
-			}
 
-			function closeDetail() {
-				console.log("关闭详情");
-				document.getElementById('detailPage').style.display = 'none';
-			}
-		</script>
-	</body>
+</div>
+
+<div class="lightbox" id="lightbox">
+	<button class="lb-close" type="button" onclick="closeDetail()" aria-label="关闭">&times;</button>
+	<img id="lbImg" alt="详情图">
+	<p class="lightbox-cap" id="lbCap"></p>
+	<div class="lb-hint">按 Esc 或点击空白处关闭</div>
+</div>
+
+<script>
+	var lb = document.getElementById('lightbox');
+	var lbImg = document.getElementById('lbImg');
+	var lbCap = document.getElementById('lbCap');
+
+	function showDetail(imgSrc, captionText) {
+		lbImg.src = imgSrc;
+		lbCap.textContent = captionText;
+		lb.classList.add('open');
+		document.body.style.overflow = 'hidden';
+	}
+
+	function closeDetail() {
+		lb.classList.remove('open');
+		lbImg.removeAttribute('src');
+		document.body.style.overflow = '';
+	}
+
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape') closeDetail();
+	});
+
+	lb.addEventListener('click', function (e) {
+		if (e.target === lb) closeDetail();
+	});
+</script>
+
+</body>
 </html>

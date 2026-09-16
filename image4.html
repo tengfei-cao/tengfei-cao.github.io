@@ -1,131 +1,107 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>日常生活- 详情</title>
-		<style>
-			body {
-				font-family: Arial, sans-serif;
-				margin: 0;
-				padding: 20px;
-				background-color: #f5f5f5;
-			}
-			.page-title {
-				text-align: center;
-				color: #333;
-			}
-			.image-container {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: flex-start; /* 左对齐 */
-				gap: 15px;
-			}
-			.image-item {
-				width: calc(25% - 11.25px); /* 四张图片占一行，减去间隙 */
-				border-radius: 8px;
-				box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-				overflow: hidden;
-				position: relative;
-				background-color: white;
-				text-align: center;
-				cursor: pointer;
-			}
-			.image-item img {
-				width: 100%;
-				height: 280px;
-				object-fit: cover;
-				display: block;
-			}
-			.caption {
-				text-align: center;
-				margin-top: 8px;
-				font-size: 14px;
-				color: #666;
-				padding: 0 10px;
-			}
-			/* 详情页样式 */
-			.detail-page {
-				display: none;
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: rgba(0, 0, 0, 0.9);
-				z-index: 1000;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-			}
-			.detail-img			 {
-	max-width: 80%;
-				max-height: 70vh;
-				object-fit: contain;
-			}
-			.close-btn {
-				position: absolute;
-				top: 20px;
-				right: 20px;
-				color: white;
-				font-size: 30px;
-				cursor: pointer;
-			}
-		</style>
-	</head>
-	<body>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日常生活 - 曹腾飞教授个人主页</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+	<div class="wrap">
+		<a class="nav-home" href="index.html">曹腾飞</a>
+		<div class="nav-links">
+			<a href="index.html">返回主页</a>
+			<a href="image.html">返回相册</a>
+		</div>
+	</div>
+</nav>
+
+<div class="wrap">
+
+	<div class="page-head">
+		<div class="back-bar">
+			<a href="index.html">← 返回主页</a>
+			<a href="image.html">← 返回相册</a>
+		</div>
 		<h1 class="page-title">日常生活</h1>
-		<div class="image-container">
-			<div class="image-item" onclick="showDetail('pic/live/1.jpg', '校园')">
-				<img src="pic/live/1.jpg" alt="荣誉1">
-				<p class="caption">校园</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/live/2.jpg', '八角亭')">
-				<img src="pic/live/2.jpg" alt="荣誉1">
-				<p class="caption">八角亭</p>
-			</div>
-<!-- 			<div class="image-item" onclick="showDetail('pic/live/3.jpg', '聚餐')">
-				<img src="pic/live/3.jpg" alt="荣誉1">
-				<p class="caption">聚餐</p>
-			</div> -->
-			<div class="image-item" onclick="showDetail('pic/live/4.jpg', '杏花树')">
-				<img src="pic/live/4.jpg" alt="荣誉1">
-				<p class="caption">杏花树</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/live/5.jpg', '讨论')">
-				<img src="pic/live/5.jpg" alt="荣誉1">
-				<p class="caption">讨论</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/live/6.jpg', '组会前夕')">
-				<img src="pic/live/6.jpg" alt="荣誉1">
-				<p class="caption">组会前夕</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/live/7.jpg', '体育馆')">
-				<img src="pic/live/7.jpg" alt="荣誉1">
-				<p class="caption">体育馆</p>
-			</div>
-			<div class="image-item" onclick="showDetail('pic/live/8.jpg', '敬请期待')">
-				<img src="pic/live/8.jpg" alt="荣誉1">
-				<p class="caption">敬请期待</p>
-			</div>
-			
+		<p class="page-sub">点击图片查看大图</p>
+	</div>
+
+	<div class="gallery">
+		<div class="g-item" onclick="showDetail('pic/live/1.jpg', '校园')">
+			<img src="pic/live/1.jpg" alt="校园">
+			<p class="g-cap">校园</p>
 		</div>
-
-		<div class="detail-page" id="detailPage">
-			<span class="close-btn" onclick="closeDetail()">&times;</span>
-			<img class="detail-img" id="detailImg" src="" alt="详情图">
-			<p style="color: white; font-size: 20px; margin-top: 20px;" id="detailText"></p>
+		<div class="g-item" onclick="showDetail('pic/live/2.jpg', '八角亭')">
+			<img src="pic/live/2.jpg" alt="八角亭">
+			<p class="g-cap">八角亭</p>
 		</div>
+		<!--
+		<div class="g-item" onclick="showDetail('pic/live/3.jpg', '聚餐')">
+			<img src="pic/live/3.jpg" alt="聚餐">
+			<p class="g-cap">聚餐</p>
+		</div>
+		-->
+		<div class="g-item" onclick="showDetail('pic/live/4.jpg', '杏花树')">
+			<img src="pic/live/4.jpg" alt="杏花树">
+			<p class="g-cap">杏花树</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/live/5.jpg', '讨论')">
+			<img src="pic/live/5.jpg" alt="讨论">
+			<p class="g-cap">讨论</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/live/6.jpg', '组会前夕')">
+			<img src="pic/live/6.jpg" alt="组会前夕">
+			<p class="g-cap">组会前夕</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/live/7.jpg', '体育馆')">
+			<img src="pic/live/7.jpg" alt="体育馆">
+			<p class="g-cap">体育馆</p>
+		</div>
+		<div class="g-item" onclick="showDetail('pic/live/8.jpg', '敬请期待')">
+			<img src="pic/live/8.jpg" alt="敬请期待">
+			<p class="g-cap">敬请期待</p>
+		</div>
+	</div>
 
-		<script>
-			function showDetail(imgSrc, detailText) {
-				document.getElementById('detailImg').src = imgSrc;
-				document.getElementById('detailText').textContent = detailText;
-				document.getElementById('detailPage').style.display = 'flex';
-			}
 
-			function closeDetail() {
-				document.getElementById('detailPage').style.display = 'none';
-			}
-		</script>
-	</body>
+</div>
+
+<div class="lightbox" id="lightbox">
+	<button class="lb-close" type="button" onclick="closeDetail()" aria-label="关闭">&times;</button>
+	<img id="lbImg" alt="详情图">
+	<p class="lightbox-cap" id="lbCap"></p>
+	<div class="lb-hint">按 Esc 或点击空白处关闭</div>
+</div>
+
+<script>
+	var lb = document.getElementById('lightbox');
+	var lbImg = document.getElementById('lbImg');
+	var lbCap = document.getElementById('lbCap');
+
+	function showDetail(imgSrc, captionText) {
+		lbImg.src = imgSrc;
+		lbCap.textContent = captionText;
+		lb.classList.add('open');
+		document.body.style.overflow = 'hidden';
+	}
+
+	function closeDetail() {
+		lb.classList.remove('open');
+		lbImg.removeAttribute('src');
+		document.body.style.overflow = '';
+	}
+
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape') closeDetail();
+	});
+
+	lb.addEventListener('click', function (e) {
+		if (e.target === lb) closeDetail();
+	});
+</script>
+
+</body>
 </html>
